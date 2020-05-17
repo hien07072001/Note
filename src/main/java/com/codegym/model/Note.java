@@ -10,9 +10,10 @@ public class Note {
     private Integer id;
     private String title;
     private String content;
-    @ManyToOne(targetEntity = NoteType.class)
-    @JoinColumn(name = "notetype_id")
-    private NoteType noteType;
+
+    @ManyToOne(targetEntity = Note_Type.class)
+    @JoinColumn
+    private Note_Type note_Type;
 
     public Integer getId() {
         return id;
@@ -38,22 +39,22 @@ public class Note {
         this.content = content;
     }
 
-    public NoteType getNoteType() {
-        return noteType;
+    public Note_Type getNoteType() {
+        return note_Type;
     }
 
-    public void setNoteType(NoteType noteType) {
-        this.noteType = noteType;
+    public void setNoteType(Note_Type note_Type) {
+        this.note_Type = note_Type;
     }
 
     public Note() {
     }
 
-    public Note(Integer id, String title, String content, NoteType noteType) {
+    public Note(Integer id, String title, String content, Note_Type note_Type) {
         this.id = id;
         this.title = title;
         this.content = content;
-        this.noteType = noteType;
+        this.note_Type = note_Type;
     }
 
     public Note(String title, String content) {
